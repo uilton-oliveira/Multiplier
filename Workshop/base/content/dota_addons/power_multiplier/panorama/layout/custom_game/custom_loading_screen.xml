@@ -1,0 +1,24 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />		
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/simple_panel_animation.js" /> 
+		<include src="file://{resources}/scripts/custom_game/game_mode.js" /> 
+	</scripts>
+
+	<script>
+		DrawGameModeUi();
+	</script>
+
+	<Panel class="AddonLoadingRoot">
+		<Panel id="CustomBg" >
+			<Image id="bg" class="ProBg" src="file://{images}/custom_game/loading_screen/custom_bg.png" />
+		</Panel>
+		<Panel id="TitlePanel">
+			<Label id="AddonTitle" text="#addon_game_name" style="" />
+		</Panel>
+	</Panel>
+
+</root>

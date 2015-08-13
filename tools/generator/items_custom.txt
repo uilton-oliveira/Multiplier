@@ -1,0 +1,108 @@
+"DOTAAbilities"
+{
+	"item_health_modifier"
+	{
+		"ID"							"2102"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
+		"ItemPurchasable"					"0"
+
+		"precache"
+		{
+			"particle"			"particles/courier_gold_horn_ambient.vpcf"	
+		}
+ 
+		"Modifiers"
+		{
+			"modifier_health_mod_2"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"300"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+			}
+			"modifier_health_mod_3"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"500"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+			}
+			"modifier_health_mod_4"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"700"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+			}
+			"modifier_health_mod_5"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"1000"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+			}
+			"modifier_health_mod_10"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"2000"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+			}
+			"modifier_health_mod_20"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				
+
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"3600"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+						
+			}
+			"developer_aura"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+
+				"EffectName"		"particles/courier_gold_horn_ambient.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+						
+			}
+
+		}
+	}
+}

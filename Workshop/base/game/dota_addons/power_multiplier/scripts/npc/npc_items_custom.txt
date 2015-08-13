@@ -1,0 +1,297 @@
+"DOTAAbilities"
+{
+	"item_dummy"
+	{
+		"ID"							"2102"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
+		"ItemPurchasable"					"0"
+
+		"precache"
+		{
+			"particle"			"particles/courier_gold_horn_ambient.vpcf"	
+		}
+ 
+		"Modifiers"
+		{
+			"modifier_health_mod_2"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"300"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+			}
+			"modifier_health_mod_3"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"500"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+			}
+			"modifier_health_mod_4"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"700"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+			}
+			"modifier_health_mod_5"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"1000"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+			}
+			"modifier_health_mod_10"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"2000"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+			}
+			"modifier_health_mod_20"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"3600"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "50"
+				}
+						
+			}
+			"developer_aura"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+
+				"EffectName"		"particles/courier_gold_horn_ambient.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+						
+			}
+
+			"modifier_armor_per_agility_change"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"ThinkInterval"  		"0.5"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/modifier_armor_per_agility"
+						"Function"			"ReduceArmorPerAgility"
+					}
+				}
+			}
+			"modifier_stats_bonus_x2"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"2"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"  "2"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"  "2"
+				}
+			}
+			"modifier_stats_bonus_x3"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"4"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"  "4"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"  "4"
+				}
+			}
+			"modifier_stats_bonus_x4"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"6"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"  "6"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"  "6"
+				}
+			}
+			"modifier_stats_bonus_x5"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"8"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"  "8"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"  "8"
+				}
+			}
+			"modifier_stats_bonus_x10"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"18"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"  "18"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"  "18"
+				}
+			}
+			"modifier_stats_bonus_x20"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"Aura_ApplyToCaster" 	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"38"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"  "38"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"  "38"
+				}
+			}
+
+			"modifier_ability_layout_1"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABILITY_LAYOUT"	"1"
+				}
+			}
+			"modifier_ability_layout_2"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABILITY_LAYOUT"	"2"
+				}
+			}
+			"modifier_ability_layout_3"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABILITY_LAYOUT"	"3"
+				}
+			}
+			"modifier_ability_layout_4"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABILITY_LAYOUT"	"4"
+				}
+			}
+			"modifier_ability_layout_5"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABILITY_LAYOUT"	"5"
+				}
+			}
+			"modifier_ability_layout_6"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABILITY_LAYOUT"	"6"
+				}
+			}
+
+		}
+	}
+}

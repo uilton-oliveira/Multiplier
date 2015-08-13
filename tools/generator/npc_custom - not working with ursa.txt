@@ -1,0 +1,41 @@
+
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+	
+	//=================================================================================================================
+	// Ability: Attribute Bonus
+	//=================================================================================================================
+	"attribute_bonus"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"                      "10"
+
+        "Modifiers"
+        {
+            "modifier_attribute_bonus"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%attribute_bonus_per_level"
+                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%attribute_bonus_per_level"
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%attribute_bonus_per_level"
+                }
+            }
+        }
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "attribute_bonus_per_level"     "2.0"
+            }
+        }
+    }
+	
+}
+

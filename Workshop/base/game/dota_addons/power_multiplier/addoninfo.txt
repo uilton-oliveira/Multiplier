@@ -1,0 +1,5 @@
+"AddonInfo"
+{
+	maps			"dota dota_random_skills"
+	"IsPlayable"	"1"
+}

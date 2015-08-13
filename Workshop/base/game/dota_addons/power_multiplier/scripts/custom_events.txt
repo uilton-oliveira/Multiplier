@@ -1,0 +1,43 @@
+// No spaces in event names, max length 32
+// All strings are case sensitive
+//
+// valid data key types are:
+//   string : a zero terminated string
+//   bool   : unsigned int, 1 bit
+//   byte   : unsigned int, 8 bit
+//   short  : signed int, 16 bit
+//   long   : signed int, 32 bit
+//   float  : float, 32 bit
+//   uint64 : unsigned int 64 bit
+//   local  : any data, but not networked to clients
+//
+// following key names are reserved:
+//   local      : if set to 1, event is not networked to clients
+//   unreliable : networked, but unreliable
+//   suppress   : never fire this event
+//   time	: firing server time
+//   eventid	: holds the event ID
+
+"CustomEvents"
+{
+    
+    //This event is fired when the its time to start voting
+    "pwm_show_dialog"
+    {
+	//define the name of the parameter and the type, we use a short for these values (16 bit integer)
+    }
+    "pwm_hide_dialog"
+    {
+	//define the name of the parameter and the type, we use a short for these values (16 bit integer)
+    }
+    "pwm_enable_picking"
+    {
+	//define the name of the parameter and the type, we use a short for these values (16 bit integer)
+    }
+    "pwm_disable_picking"
+    {
+	//define the name of the parameter and the type, we use a short for these values (16 bit integer)
+    }
+	
+}
+

@@ -1,0 +1,65 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/game_mode_ui.css" />
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/game_mode.js" /> 
+		<include src="file://{resources}/scripts/custom_game/simple_panel_animation.js" /> 
+	</scripts>
+	
+
+	<Panel class="GameModeSelectPanel">
+
+
+		<Panel id="Group1">	
+
+			<Label text="GAME MODE"/>
+			<DropDown id="PlayMode">
+				<Label text="All Pick" id="ap"/>
+				<Label text="All Random" id="ar"/>
+				<Label text="Same Hero" id="sh"/>
+			</DropDown>
+
+			<ToggleButton checked="true" text="Buff Stats" id="buffStats" />
+			<ToggleButton checked="true" text="Easy Mode" id="easyMode" />
+			<ToggleButton text="Buff Creeps" id="buffCreeps" />
+			<ToggleButton text="Buff Towers" id="buffTowers" />
+			<ToggleButton text="Fast Respawn" id="fastRespawn" />
+			<ToggleButton text="Random Skills" id="randomSkills" onactivate="OnRandomSkillsClick();" />
+
+
+			<Panel id="GroupRdnSk" class="disabled" disabled="true">
+
+				<ToggleButton text="Change Skills on Death" id="changeSkillsOnDeath" />
+
+				<Label text="TOTAL RANDOM SKILLS" id="LabelRandomSkills"/>
+				<DropDown id="TotalSkills">
+					<Label text="6" id="6"/>
+					<Label text="1" id="1"/>
+					<Label text="2" id="2"/>
+					<Label text="3" id="3"/>
+					<Label text="4" id="4"/>
+					<Label text="5" id="5"/>				
+				</DropDown>
+
+				<Label text="RANDOM ULTIMATES" id="LabelRandomUltis"/>
+				<DropDown id="TotalUltis">
+					<Label text="1" id="1"/>
+					<Label text="2" id="2"/>
+					<Label text="3" id="3"/>
+					<Label text="4" id="4"/>
+					<Label text="5" id="5"/>
+				</DropDown>
+
+			</Panel>
+
+			<Button id="SetGameModeButton" class="ButtonBevel" onactivate="SetGameMode();" style="" >
+				<Label text="Apply"/>
+			</Button>
+		</Panel>
+
+
+	</Panel>
+</root>

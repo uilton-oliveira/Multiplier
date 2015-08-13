@@ -1,0 +1,140 @@
+.invisible
+{
+    opacity: 0;
+    visibility: collapse;
+    transition-property: opacity;
+    transition-delay: 0.0s;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+
+}
+
+.disabled
+{
+    opacity: 0.1;
+    transition-property: opacity;
+    transition-delay: 0.0s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.disabled > DropDown:hover
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #292e2e ), to( #191e1e ) );
+}
+
+.not_host > DropDown:hover
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #292e2e ), to( #191e1e ) );
+}
+
+.not_host > DropDown
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #292e2e ), to( #191e1e ) );
+    background-image: url();
+}
+
+/*.not_host
+{
+    opacity: 0.85;
+}*/
+
+.not_host > #SetGameModeButton
+{
+    visibility: collapse;
+}
+
+#Group1.not_host > ToggleButton Label
+{
+    color: #A5ADA2FF;
+}
+
+#Group1.not_host > ToggleButton Panel
+{
+    border: 2px solid #5e686966;
+}
+
+
+
+.GameModeSelectPanel
+{
+    flow-children: right;
+    width: 280px;
+    height: 100%;
+    /*margin-left: -350px;    */
+    background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619ff ), to( #000000dd ) );
+    box-shadow: black -4px -4px 8px 8px;
+}
+
+.not_host.GameModeSelectPanel
+{
+    flow-children: right;
+    width: 280px;
+    height: 100%;
+    /*margin-left: -350px;    */
+    background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619ff ), to( #000000dd ) );
+    box-shadow: black -4px -4px 8px 8px;
+}
+
+#buffStats
+{
+    margin-top: 6px;
+}
+
+#Group1
+{
+    padding-left: 25px;
+    width: 90%;
+    vertical-align: center;
+    flow-children: down;
+}
+
+#GroupRdnSk
+{
+    width: 100%;
+    vertical-align: center;
+    flow-children: down;
+
+    transition-property: opacity;
+    transition-delay: 0.0s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+#LabelRandomUltis
+{
+    margin-top: 15px;
+}
+
+#LabelRandomSkills
+{
+    margin-top: 20px;
+}
+
+#PlayMode
+{
+    width: 100%;
+}
+
+#SetGameModeButton:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+	box-shadow: fill #486ca966 -4px -4px 18px 8px;
+}
+
+#SetGameModeButton:active
+{
+    sound: "ui_team_select_lock_and_start";
+}
+
+#SetGameModeButton
+{
+    border-width: 0px;
+    width: 100%;
+    margin-top: 20px;
+    horizontal-align: right;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+    box-shadow: fill #486ca922 -4px -4px 8px 8px;
+    border-top: 1px solid #ffffff03;
+    border-left: 1px solid #ffffff03;
+}

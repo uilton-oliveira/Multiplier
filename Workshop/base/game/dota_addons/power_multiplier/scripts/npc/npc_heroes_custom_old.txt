@@ -1,0 +1,547 @@
+"DOTAHeroes" {
+	"npc_dota_hero_antimage_pwm" {
+		"override_hero"	"npc_dota_hero_antimage"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_axe_pwm" {
+		"override_hero"	"npc_dota_hero_axe"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_bane_pwm" {
+		"override_hero"	"npc_dota_hero_bane"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_bloodseeker_pwm" {
+		"override_hero"	"npc_dota_hero_bloodseeker"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_crystal_maiden_pwm" {
+		"override_hero"	"npc_dota_hero_crystal_maiden"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_drow_ranger_pwm" {
+		"override_hero"	"npc_dota_hero_drow_ranger"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_earthshaker_pwm" {
+		"override_hero"	"npc_dota_hero_earthshaker"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_juggernaut_pwm" {
+		"override_hero"	"npc_dota_hero_juggernaut"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_mirana_pwm" {
+		"override_hero"	"npc_dota_hero_mirana"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_nevermore_pwm" {
+		"override_hero"	"npc_dota_hero_nevermore"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_morphling_pwm" {
+		"override_hero"	"npc_dota_hero_morphling"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_phantom_lancer_pwm" {
+		"override_hero"	"npc_dota_hero_phantom_lancer"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_puck_pwm" {
+		"override_hero"	"npc_dota_hero_puck"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_pudge_pwm" {
+		"override_hero"	"npc_dota_hero_pudge"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_razor_pwm" {
+		"override_hero"	"npc_dota_hero_razor"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_sand_king_pwm" {
+		"override_hero"	"npc_dota_hero_sand_king"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_storm_spirit_pwm" {
+		"override_hero"	"npc_dota_hero_storm_spirit"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_sven_pwm" {
+		"override_hero"	"npc_dota_hero_sven"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_tiny_pwm" {
+		"override_hero"	"npc_dota_hero_tiny"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_vengefulspirit_pwm" {
+		"override_hero"	"npc_dota_hero_vengefulspirit"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_windrunner_pwm" {
+		"override_hero"	"npc_dota_hero_windrunner"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_zuus_pwm" {
+		"override_hero"	"npc_dota_hero_zuus"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_kunkka_pwm" {
+		"override_hero"	"npc_dota_hero_kunkka"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_lina_pwm" {
+		"override_hero"	"npc_dota_hero_lina"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_lich_pwm" {
+		"override_hero"	"npc_dota_hero_lich"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_lion_pwm" {
+		"override_hero"	"npc_dota_hero_lion"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_shadow_shaman_pwm" {
+		"override_hero"	"npc_dota_hero_shadow_shaman"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_slardar_pwm" {
+		"override_hero"	"npc_dota_hero_slardar"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_tidehunter_pwm" {
+		"override_hero"	"npc_dota_hero_tidehunter"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_witch_doctor_pwm" {
+		"override_hero"	"npc_dota_hero_witch_doctor"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_riki_pwm" {
+		"override_hero"	"npc_dota_hero_riki"
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_enigma_pwm" {
+		"override_hero"	"npc_dota_hero_enigma"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_tinker_pwm" {
+		"override_hero"	"npc_dota_hero_tinker"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_sniper_pwm" {
+		"override_hero"	"npc_dota_hero_sniper"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_necrolyte_pwm" {
+		"override_hero"	"npc_dota_hero_necrolyte"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_warlock_pwm" {
+		"override_hero"	"npc_dota_hero_warlock"
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_beastmaster_pwm" {
+		"override_hero"	"npc_dota_hero_beastmaster"
+		"AbilityLayout"	"6"	"ProjectileSpeed"	"1000"
+
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_queenofpain_pwm" {
+		"override_hero"	"npc_dota_hero_queenofpain"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_venomancer_pwm" {
+		"override_hero"	"npc_dota_hero_venomancer"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_faceless_void_pwm" {
+		"override_hero"	"npc_dota_hero_faceless_void"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_skeleton_king_pwm" {
+		"override_hero"	"npc_dota_hero_skeleton_king"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_death_prophet_pwm" {
+		"override_hero"	"npc_dota_hero_death_prophet"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_phantom_assassin_pwm" {
+		"override_hero"	"npc_dota_hero_phantom_assassin"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_pugna_pwm" {
+		"override_hero"	"npc_dota_hero_pugna"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_templar_assassin_pwm" {
+		"override_hero"	"npc_dota_hero_templar_assassin"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_viper_pwm" {
+		"override_hero"	"npc_dota_hero_viper"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_luna_pwm" {
+		"override_hero"	"npc_dota_hero_luna"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_dragon_knight_pwm" {
+		"override_hero"	"npc_dota_hero_dragon_knight"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_dazzle_pwm" {
+		"override_hero"	"npc_dota_hero_dazzle"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_rattletrap_pwm" {
+		"override_hero"	"npc_dota_hero_rattletrap"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_leshrac_pwm" {
+		"override_hero"	"npc_dota_hero_leshrac"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_furion_pwm" {
+		"override_hero"	"npc_dota_hero_furion"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_life_stealer_pwm" {
+		"override_hero"	"npc_dota_hero_life_stealer"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_dark_seer_pwm" {
+		"override_hero"	"npc_dota_hero_dark_seer"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_clinkz_pwm" {
+		"override_hero"	"npc_dota_hero_clinkz"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_omniknight_pwm" {
+		"override_hero"	"npc_dota_hero_omniknight"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_enchantress_pwm" {
+		"override_hero"	"npc_dota_hero_enchantress"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_huskar_pwm" {
+		"override_hero"	"npc_dota_hero_huskar"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_night_stalker_pwm" {
+		"override_hero"	"npc_dota_hero_night_stalker"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_broodmother_pwm" {
+		"override_hero"	"npc_dota_hero_broodmother"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_bounty_hunter_pwm" {
+		"override_hero"	"npc_dota_hero_bounty_hunter"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_weaver_pwm" {
+		"override_hero"	"npc_dota_hero_weaver"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_jakiro_pwm" {
+		"override_hero"	"npc_dota_hero_jakiro"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_batrider_pwm" {
+		"override_hero"	"npc_dota_hero_batrider"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_chen_pwm" {
+		"override_hero"	"npc_dota_hero_chen"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_spectre_pwm" {
+		"override_hero"	"npc_dota_hero_spectre"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_doom_bringer_pwm" {
+		"override_hero"	"npc_dota_hero_doom_bringer"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_ancient_apparition_pwm" {
+		"override_hero"	"npc_dota_hero_ancient_apparition"	
+		"AbilityLayout"	"6"
+	}
+	
+	"npc_dota_hero_spirit_breaker_pwm" {
+		"override_hero"	"npc_dota_hero_spirit_breaker"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_gyrocopter_pwm" {
+		"override_hero"	"npc_dota_hero_gyrocopter"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_alchemist_pwm" {
+		"override_hero"	"npc_dota_hero_alchemist"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_invoker_pwm" {
+		"override_hero"	"npc_dota_hero_invoker"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_silencer_pwm" {
+		"override_hero"	"npc_dota_hero_silencer"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_obsidian_destroyer_pwm" {
+		"override_hero"	"npc_dota_hero_obsidian_destroyer"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_lycan_pwm" {
+		"override_hero"	"npc_dota_hero_lycan"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_brewmaster_pwm" {
+		"override_hero"	"npc_dota_hero_brewmaster"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_shadow_demon_pwm" {
+		"override_hero"	"npc_dota_hero_shadow_demon"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_lone_druid_pwm" {
+		"override_hero"	"npc_dota_hero_lone_druid"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_chaos_knight_pwm" {
+		"override_hero"	"npc_dota_hero_chaos_knight"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_meepo_pwm" {
+		"override_hero"	"npc_dota_hero_meepo"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_treant_pwm" {
+		"override_hero"	"npc_dota_hero_treant"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_ogre_magi_pwm" {
+		"override_hero"	"npc_dota_hero_ogre_magi"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_undying_pwm" {
+		"override_hero"	"npc_dota_hero_undying"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_rubick_pwm" {
+		"override_hero"	"npc_dota_hero_rubick"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_disruptor_pwm" {
+		"override_hero"	"npc_dota_hero_disruptor"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_nyx_assassin_pwm" {
+		"override_hero"	"npc_dota_hero_nyx_assassin"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_naga_siren_pwm" {
+		"override_hero"	"npc_dota_hero_naga_siren"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_keeper_of_the_light_pwm" {
+		"override_hero"	"npc_dota_hero_keeper_of_the_light"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_wisp_pwm" {
+		"override_hero"	"npc_dota_hero_wisp"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_visage_pwm" {
+		"override_hero"	"npc_dota_hero_visage"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_slark_pwm" {
+		"override_hero"	"npc_dota_hero_slark"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_medusa_pwm" {
+		"override_hero"	"npc_dota_hero_medusa"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_troll_warlord_pwm" {
+		"override_hero"	"npc_dota_hero_troll_warlord"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_centaur_pwm" {
+		"override_hero"	"npc_dota_hero_centaur"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_magnataur_pwm" {
+		"override_hero"	"npc_dota_hero_magnataur"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_shredder_pwm" {
+		"override_hero"	"npc_dota_hero_shredder"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_bristleback_pwm" {
+		"override_hero"	"npc_dota_hero_bristleback"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_tusk_pwm" {
+		"override_hero"	"npc_dota_hero_tusk"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_skywrath_mage_pwm" {
+		"override_hero"	"npc_dota_hero_skywrath_mage"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_abaddon_pwm" {
+		"override_hero"	"npc_dota_hero_abaddon"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_elder_titan_pwm" {
+		"override_hero"	"npc_dota_hero_elder_titan"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_legion_commander_pwm" {
+		"override_hero"	"npc_dota_hero_legion_commander"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_ember_spirit_pwm" {
+		"override_hero"	"npc_dota_hero_ember_spirit"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_earth_spirit_pwm" {
+		"override_hero"	"npc_dota_hero_earth_spirit"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_abyssal_underlord_pwm" {
+		"override_hero"	"npc_dota_hero_abyssal_underlord"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_terrorblade_pwm" {
+		"override_hero"	"npc_dota_hero_terrorblade"	
+		"AbilityLayout"	"6"
+		"ProjectileSpeed"	"1000"
+		"ProjectileModel"	"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+	"npc_dota_hero_phoenix_pwm" {
+		"override_hero"	"npc_dota_hero_phoenix"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_oracle_pwm" {
+		"override_hero"	"npc_dota_hero_oracle"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_techies_pwm" {
+		"override_hero"	"npc_dota_hero_techies"	
+		"AbilityLayout"	"6"
+	}
+	"npc_dota_hero_winter_wyvern_pwm" {
+		"override_hero"	"npc_dota_hero_winter_wyvern"	
+		"AbilityLayout"	"6"
+	}
+}

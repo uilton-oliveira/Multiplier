@@ -1,0 +1,100 @@
+"DOTAAbilities"
+{
+	"Version"		"1"
+  	
+
+	//=================================================================================================================
+	// Ability Layout 4
+	//=================================================================================================================
+	"ability_layout_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"attribute_bonus"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_ability_layout"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABILITY_LAYOUT"			"4"
+				}
+			}
+		}		
+	}
+
+	//=================================================================================================================
+	// Ability Layout 5
+	//=================================================================================================================
+	"ability_layout_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"attribute_bonus"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_ability_layout"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABILITY_LAYOUT"			"5"
+				}
+			}
+		}		
+	}
+	//=================================================================================================================
+	// Ability Layout 4
+	//=================================================================================================================
+	"ability_layout_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"attribute_bonus"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_ability_layout"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABILITY_LAYOUT"			"6"
+				}
+			}
+		}		
+	}
+}

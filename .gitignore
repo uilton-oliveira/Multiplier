@@ -1,0 +1,24 @@
+# Cache crap that Valve autogenerates
+*.bin
+
+# Compiled formats
+*.vpcf_c
+*.vtex_c
+*.vsndevts_c
+*.vmat_c
+*.vjs_c
+*.vxml_c
+*.vcss_c
+*.pyc
+
+# Map files
+*.vpk
+
+# Map overviews
+Workshop/base/content/dota_addons/power_multiplier/materials/overviews/*
+Workshop/base/game/dota_addons/power_multiplier/materials/overviews/*
+Workshop/base/game/dota_addons/power_multiplier/resource/overviews/*
+Workshop/publish/*
+
+#Github dump
+*.stackdump

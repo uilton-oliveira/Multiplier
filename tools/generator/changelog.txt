@@ -1,0 +1,56 @@
+* Random Skills / Change Skills on Death
+- Added abilities from picked heroes to the abilities pool, so it will increase the number of abilities avaliable without the need to precache more heroes
+
+* General
+- Reworked stats gained per level, instead of getting it fully multiplied, you'll get bonus only to your primary stats x3 (stats gain * 2)
+- Armor provided by item and agility will be multiplied by 3 (on x20, every 126 agility you'll gain 1 armor, instead of 140)
+- PS: Remember that armor given by Agility is bugged on UI due to an bug on Dota API, but internally it will works like i said above (I'll try to workaround it soon)
+
+* Same Hero (Fix)
+- When the mode selected is Same Hero, it will allow to pick the same hero, to prevent users from picking an hero and make host unable to select it. (This mode is meant to make all heroes same as the host)
+
+* Sand King (Fix)
+- Epicenter -> Number of pulses will no longer be multiplied, looks that it was causing crash (but the damage is still multiplied)
+
+* Sven (Buff)
+- Increased Cleave Radius up to 600 AoE
+
+* Battlefury (Buff)
+- Increased Cleave Radius  up to 600 AoE
+
+* Tiny (Buff)
+- Increase Cleave Radius (Aghanims) up to 600 AoE
+
+* Magnataur (Buff)
+- Increased Cleave Radius  up to 500 AoE
+
+* Manta (Buff)
+- Fixed Tooltips
+- Damage Outgoing -> Ranged: 40%  / Melee: 50%
+- Damage Incoming -> Ranged: 300% / Melee: 250% 
+
+* Techies (Buff)
+- Land Mines -> Damage increased up to 6000 6750 7500 8250 (This was increased since the armor is now buffed x3)
+
+* Earthshaker (Nerf)
+- Enchant Totem -> Damage % increased up to '700 800 900 1000'
+
+* Medusa (Nerf)
+- Split Shot -> Damage % rescaled to '-20 -16 -13 -10' / Arrow count limited up to 4 6 8 10
+- Mana Shield -> Damage per mana rescaled up to 3.2 3.8 4.4 5.0
+
+* Maelstrom (Buff)
+- Increased Radius up to 1400
+- Increased Strikes up to 25
+- Chain Strikes will be faster now (0.05s delay per target instead of 0.25)
+
+* Mjollnir (Buff)
+- Increased Chain Radius up to 1400
+- Increased Static Primary Radius up to 900
+- Increased Static Secundary Radius up to 1400
+- Increased Chain Strikes up to 40
+- Increased Static Radius up to 25
+- Chain Strikes will be faster now (0.05s delay per target instead of 0.25)
+
+* Phantom Lancer (Nerf)
+- Doppelwalk -> proc_chance_pct limited up to '45 55 65%' (from 90%), illusion_proc_chance_pct limited up to '20%' (from 50%)

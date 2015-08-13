@@ -1,0 +1,8 @@
+
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+	
+}
+
