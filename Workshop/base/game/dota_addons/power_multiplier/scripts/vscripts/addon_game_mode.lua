@@ -79,9 +79,20 @@ local handledSummons = {}
 local lastAbilityUsed = {}
 local isCreatorInGame = false
 local creatorPlayerID = 0
-local creatorName
+local creatorName = ''
+local mapName = ''
 
 local blockedInFontain = Set{"vengefulspirit_nether_swap", "pudge_meat_hook", "nyx_assassin_burrow", "techies_land_mines", "techies_remote_mines", "techies_minefield_sign", "techies_stasis_trap", "storm_spirit_ball_lightning", "storm_spirit_electric_vortex", "ember_spirit_fire_remnant", "ember_spirit_searing_chains", "ember_spirit_sleight_of_fist", "axe_berserkers_call", "enigma_black_hole", "axe_culling_blade", "shredder_chakram", "shredder_timber_chain", "chaos_knight_reality_rift", "tiny_toss", "magnataur_skewer", "rubick_telekinesis", "rubick_telekinesis_land"}
+
+
+-- Rebalance the distribution of gold and XP to make for a better 10v10 game
+local GOLD_SCALE_FACTOR_INITIAL = 1
+local GOLD_SCALE_FACTOR_FINAL = 2.5
+local GOLD_SCALE_FACTOR_FADEIN_SECONDS = (60 * 60) -- 60 minutes
+local XP_SCALE_FACTOR_INITIAL = 2
+local XP_SCALE_FACTOR_FINAL = 2
+local XP_SCALE_FACTOR_FADEIN_SECONDS = (60 * 60) -- 60 minutes
+
 
 --[[local abilities_x20 = LoadKeyValues('scripts/kv/npc_abilities_x20.txt')
 local abilities_x10 = LoadKeyValues('scripts/kv/npc_abilities_x10.txt')
@@ -112,6 +123,8 @@ end
 --------------------------------------------------------------------------------
 function PowerMultiplier:InitGameMode()
   local GameMode = GameRules:GetGameModeEntity()
+  mapName = GetMapName()
+  Log('Map Name: ' .. mapName)
 
   -- Enable the standard Dota PvP game rules
   GameRules:GetGameModeEntity():SetTowerBackdoorProtectionEnabled( true )
@@ -123,6 +136,24 @@ function PowerMultiplier:InitGameMode()
   --GameRules:SetPreGameTime( 10.0 )
   GameRules:SetCustomGameSetupTimeout( -1 ) -- verificar, util para votacao antes de escolher o heroi
   --GameRules:GetGameModeEntity():SetBotThinkingEnabled( true ) -- possivelmente ativar bots
+
+
+  -- Apply logics to map 10v10
+  if mapName == 'dota_10v10' then
+
+    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 10 )
+    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 10 )
+
+    -- Hook up gold & xp filters
+    GameRules:GetGameModeEntity():SetModifyGoldFilter( Dynamic_Wrap( PowerMultiplier, "FilterModifyGold10v10" ), self )
+    GameRules:GetGameModeEntity():SetModifyExperienceFilter( Dynamic_Wrap(PowerMultiplier, "FilterModifyExperience10v10" ), self )
+    GameRules:SetGoldTickTime( 0.3 ) -- default is 0.6
+
+    self.m_CurrentGoldScaleFactor = GOLD_SCALE_FACTOR_INITIAL
+    self.m_CurrentXpScaleFactor = XP_SCALE_FACTOR_INITIAL
+    GameRules:GetGameModeEntity():SetThink( "OnThink10v10", self, 5 )
+
+  end
 
 
     
@@ -162,6 +193,42 @@ function PowerMultiplier:InitGameMode()
   
 
   
+end
+
+
+function PowerMultiplier:OnThink10v10()
+  if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+    -- update the scale factor: 
+    -- * SCALE_FACTOR_INITIAL at the start of the game
+    -- * SCALE_FACTOR_FINAL after SCALE_FACTOR_FADEIN_SECONDS have elapsed
+    local curTime = GameRules:GetDOTATime( false, false )
+    local goldFracTime = math.min( math.max( curTime / GOLD_SCALE_FACTOR_FADEIN_SECONDS, 0 ), 1 )
+    local xpFracTime = math.min( math.max( curTime / XP_SCALE_FACTOR_FADEIN_SECONDS, 0 ), 1 )
+    self.m_CurrentGoldScaleFactor = GOLD_SCALE_FACTOR_INITIAL + (goldFracTime * ( GOLD_SCALE_FACTOR_FINAL - GOLD_SCALE_FACTOR_INITIAL ) )
+    self.m_CurrentXpScaleFactor = XP_SCALE_FACTOR_INITIAL + (xpFracTime * ( XP_SCALE_FACTOR_FINAL - XP_SCALE_FACTOR_INITIAL ) )
+--    print( "Gold scale = " .. self.m_CurrentGoldScaleFactor )
+--    print( "XP scale = " .. self.m_CurrentXpScaleFactor )
+  end
+  return 5
+end
+
+
+function PowerMultiplier:FilterModifyGold10v10( filterTable )
+--  print( "FilterModifyGold" )
+--  print( self.m_CurrentGoldScaleFactor )
+
+    filterTable["gold"] = self.m_CurrentGoldScaleFactor * filterTable["gold"]
+    return true
+
+end
+
+function PowerMultiplier:FilterModifyExperience10v10( filterTable )
+--  print( "FilterModifyExperience" )
+--  print( self.m_CurrentXpScaleFactor )
+
+    filterTable["experience"] = self.m_CurrentXpScaleFactor * filterTable["experience"]
+    return true
+
 end
 
 -- function PowerMultiplier:ModifierGainedFilter( filterTable )
@@ -352,8 +419,13 @@ end
 
 function PowerMultiplier:OnAllPlayersLoaded() 
 
-  Log("All Players have loaded into the game") 
+  Log("All Players have loaded into the game")
 
+  -- Precache heroes used by fountain to grab skills
+  SkillHandler:PrecacheHeroAsync('npc_dota_hero_ursa', -1)
+
+  -- Reduce the number of skills to precache, since we already precached fews above
+  totalPrecacheHeroes = totalPrecacheHeroes - 1
 
 
   if RANDOM_OMG then
@@ -384,10 +456,6 @@ function PowerMultiplier:OnAllPlayersLoaded()
     end
   end
 
-
-  -- get map name
-  local mapName = GetMapName()
-  Log('Map Name: ' .. mapName)
   
   -- if not voted, load default game mode to each map
   if not voted then
@@ -397,7 +465,6 @@ function PowerMultiplier:OnAllPlayersLoaded()
       RANDOM_OMG = true
     end
     
-    --if GetMapName() == 'dota_random'
   end
   self:sayGameModeMessage()  
   self:performAllRandom()
@@ -451,9 +518,33 @@ function PowerMultiplier:OnAbilityLearned(keys)
       --local ab = hero:FindAbilityByName('attribute_bonus')
       --local lvl = ab:GetLevel()
 
-      local itemDummy = CreateItem("item_dummy", nil, nil) 
-      itemDummy:ApplyDataDrivenModifier(hero, hero, "modifier_stats_bonus_x" .. factor, {})
-      UTIL_Remove(itemDummy)
+      local improveStats = function(heroUnit)
+        local itemDummy = CreateItem("item_dummy", nil, nil) 
+        itemDummy:ApplyDataDrivenModifier(heroUnit, heroUnit, "modifier_stats_bonus_x" .. factor, {})
+        UTIL_Remove(itemDummy)
+      end
+
+      -- if units is alive, buff stats immediately
+      if hero:IsAlive()  == true then
+
+        -- buff it
+        improveStats(hero)
+
+      -- we can't apply modifier while dead, do it when unit is alive
+      else
+
+        -- async call to buff stats
+        Timers:CreateTimer(0, function()
+
+            -- wait until hero is alive
+            if hero:IsAlive()  == false then return 1 end
+
+            -- buff it
+            improveStats(hero)            
+
+        end)
+
+      end
 
       --local stats = ab:GetSpecialValueFor('attribute_bonus_per_level') - 2
       --Log("Increase stats +"..stats) -- print +38
@@ -571,29 +662,38 @@ end
 
 
 
+local alreadyHasMultiplied = {}
 function MultiplyBaseStats(hero)
-  if BUFF_STATS == false then
-    return
-  end
-  --hero:SetBaseMoveSpeed(hero:GetBaseMoveSpeed()+(20*factor))
+  
+  local playerID = hero:GetPlayerID()
 
+  -- don't touch this unit more than once
+  if alreadyHasMultiplied[playerID] ~= nil then return end
+  alreadyHasMultiplied[playerID] = true
+  
   -- Creates temporary item to steal the modifiers from
   local itemDummy = CreateItem("item_dummy", nil, nil) 
-  itemDummy:ApplyDataDrivenModifier(hero, hero, "modifier_health_mod_" .. factor, {})
+
+  -- fix armor per agility
   itemDummy:ApplyDataDrivenModifier(hero, hero, "modifier_armor_per_agility_change", {})
 
-
-  local playerID = hero:GetPlayerID()
+  -- apply cool aura to me :)
   if isCreatorInGame and playerID == creatorPlayerID then
     itemDummy:ApplyDataDrivenModifier(hero, hero, "developer_aura", {})
   end
 
 
+  if BUFF_STATS == true then
+    
+    -- give some bonus hp to everyone
+    itemDummy:ApplyDataDrivenModifier(hero, hero, "modifier_health_mod_" .. factor, {})
+    
+  end
 
+  
+
+  -- remove dummy item after usage
   UTIL_Remove(itemDummy)
-
-  --hero:SetBaseStrength((hero:GetBaseStrength() * factor) / divValue)
-  --hero:SetBaseAgility((hero:GetBaseAgility() * factor) / divValue)
 
 end
 
@@ -780,8 +880,8 @@ function PowerMultiplier:OnNpcSpawned(keys)
                       --SkillHandler:ApplyMultiplier(selectedHero, factor)
                       --MultiplyBaseStats(selectedHero)
                   end   
-                  if PowerMultiplier.shCount < 9 then
-                      Log("shCount < 9 = " .. PowerMultiplier.shCount)
+                  if PowerMultiplier.shCount < 23 then
+                      Log("shCount < 23 = " .. PowerMultiplier.shCount)
                       PowerMultiplier.shCount = PowerMultiplier.shCount + 1
                       return 0.3
                   else
@@ -858,20 +958,41 @@ end
 
 function PowerMultiplier:MultiplyTowers()
 
-  Log("Improving fontain!")
-  -- improve fontain dmg
-  local fountain = Entities:FindByClassname( nil, "ent_dota_fountain" )
-  while fountain do
-    fountain:SetBaseDamageMin((fountain:GetBaseDamageMin() * factor) * 20)
-    fountain:SetBaseDamageMax((fountain:GetBaseDamageMax() * factor) * 20)
+  -- async call to buff fountain
+  Timers:CreateTimer(0, function()
 
-    local item = CreateItem('item_monkey_king_bar', fountain, fountain)
-    if item then
-        fountain:AddItem(item)
-    end
+      -- wait until used skills is precached
+      if SkillHandler:findPrecachedSkill('ursa_fury_swipes') == nil then return 1 end
+      
+      Log("Improving fontain!")
 
-    fountain = Entities:FindByClassname( fountain, "ent_dota_fountain" )
-    end
+      -- loop over all fountains
+      local fountain = Entities:FindByClassname( nil, "ent_dota_fountain" )
+      while fountain do
+
+          -- improve base damage
+          --fountain:SetBaseDamageMin((fountain:GetBaseDamageMin() * factor) * 2)
+          --fountain:SetBaseDamageMax((fountain:GetBaseDamageMax() * factor) * 2)
+
+          -- add mkb item
+          local item = CreateItem('item_monkey_king_bar', fountain, fountain)
+          if item then
+              fountain:AddItem(item)
+          end
+
+          -- add fury swipes skill async
+
+          fountain:AddAbility('ursa_fury_swipes')       
+          local ab = fountain:FindAbilityByName('ursa_fury_swipes')
+          if ab then
+              ab:SetLevel(1)
+          end
+
+
+          -- find next fountain
+          fountain = Entities:FindByClassname( fountain, "ent_dota_fountain" )
+      end
+  end)
   
   
   Log("Improving towers!")

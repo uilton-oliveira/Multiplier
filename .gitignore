@@ -10,9 +10,14 @@
 *.vxml_c
 *.vcss_c
 *.pyc
+*.tmp
+*.vmesh_c
+*.vmdl_c
+*.vphys_c
 
 # Map files
 *.vpk
+*.vmap
 
 # Map overviews
 Workshop/base/content/dota_addons/power_multiplier/materials/overviews/*

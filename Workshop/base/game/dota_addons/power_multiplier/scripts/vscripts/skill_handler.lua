@@ -55,10 +55,18 @@ function skillHandler:storePrecachedSkill(skillName)
     end
 end
 
+function skillHandler:findPrecachedSkill(skillName)
+    return precachedSkills[skillName] == nil
+end
+
 function skillHandler:storePrecachedUltimate(skillName)
     if precachedUltimates[skillName] == nil then
         table.insert(precachedUltimates, skillName)
     end
+end
+
+function skillHandler:findPrecachedUltimate(skillName)
+    return precachedUltimates[skillName] == nil
 end
 
 function skillHandler:getRandomHero()
@@ -174,16 +182,19 @@ function skillHandler:PrecacheHeroAsync(heroName, total)
               SkillHandler:storePrecachedSkill(v)
             end
             SkillHandler:storePrecachedUltimate(abilities['ultimate'])
-            UNIT_BEING_PRECACHED = false
+            
+            if total > 0 then
+                total_precached = total_precached + 1
 
-            total_precached = total_precached + 1
+                Log("Total Precached Heroes: " .. total_precached .. ' / ' .. total)
 
-            Log("Total Precached Heroes: " .. total_precached .. ' / ' .. total)
-
-            if total_precached == total then
-                PRECACHE_FINISHED = true
-                Log("END PRECACHE")
+                if total_precached == total then
+                    PRECACHE_FINISHED = true
+                    Log("END PRECACHE")
+                end
             end
+
+            UNIT_BEING_PRECACHED = false
 
 
         end)

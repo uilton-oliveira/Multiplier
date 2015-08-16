@@ -24,7 +24,14 @@ function SelectDefaultGameMode(panel) {
 
 	var mapInfo = Game.GetMapInfo();
 
-	if (mapInfo.map_display_name == 'dota_random_skills') {
+
+	if (mapInfo.map_display_name == 'curse_of_rivers_end') {
+		var rndsk = panel.FindChildTraverse('randomSkills');
+		var grndsk = panel.FindChildTraverse('GroupRdnSk');
+		rndsk.enabled = true;
+		grndsk.enabled = true;
+	}
+	else if (mapInfo.map_display_name == 'dota_random_skills') {
 		var rndsk = panel.FindChildTraverse('randomSkills');
 		rndsk.SetSelected(true);
 		rndsk.enabled = false;

@@ -31,7 +31,7 @@ function getArmorToReduce(caster)
 	local multiply = factor-3
 	if multiply <= 0 then multiply = 1 end
 	
-	return ((getArmorPerAgility(caster) / factor) * multiply * -1
+	return ((getArmorPerAgility(caster) / factor) * multiply) * -1
 
 end
 

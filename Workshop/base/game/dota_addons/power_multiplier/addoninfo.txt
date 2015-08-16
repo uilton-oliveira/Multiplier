@@ -1,5 +1,9 @@
 "AddonInfo"
 {
-	maps			"dota dota_random_skills"
+	maps			"dota dota_random_skills curse_of_rivers_end dota_10v10"
 	"IsPlayable"	"1"
+	"dota_10v10"
+	{ "MaxPlayers" "20"
+}
+
 }
