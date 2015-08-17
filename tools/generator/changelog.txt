@@ -1,6 +1,6 @@
-* Techies (Nerf)
-- Land Mines -> Damage limited up to 3500 4500 5500 6500
-- Remote Mines -> Damage limited up to 2500 3500 4000
+* No damage will be taken inside fountain anymore, its to prevent heroes like zeus from farming leavers.
+* Removed many damage skills from being not be castable inside/near fountain
+* All Cast Ranges will be multiplied to 3x instead of 2x (blinks is still 4x)
 
-* Spirit Breaker (Nerf)
-- Greater Bash -> Move Speed as Damage % limited up to 50 100 150 200
+* Tinker (Nerf)
+- Laser -> Damage will be multiplied up to 10x (its pure damage)

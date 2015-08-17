@@ -82,7 +82,7 @@ local creatorPlayerID = 0
 local creatorName = ''
 local mapName = ''
 
-local blockedInFontain = Set{"vengefulspirit_nether_swap", "pudge_meat_hook", "nyx_assassin_burrow", "techies_land_mines", "techies_remote_mines", "techies_minefield_sign", "techies_stasis_trap", "storm_spirit_ball_lightning", "storm_spirit_electric_vortex", "ember_spirit_fire_remnant", "ember_spirit_searing_chains", "ember_spirit_sleight_of_fist", "axe_berserkers_call", "enigma_black_hole", "axe_culling_blade", "shredder_chakram", "shredder_timber_chain", "chaos_knight_reality_rift", "tiny_toss", "magnataur_skewer", "rubick_telekinesis", "rubick_telekinesis_land"}
+local blockedInFontain = Set{"vengefulspirit_nether_swap", "pudge_meat_hook", "nyx_assassin_burrow", "techies_minefield_sign", "storm_spirit_electric_vortex", "axe_berserkers_call", "enigma_black_hole", "chaos_knight_reality_rift", "tiny_toss", "magnataur_skewer", "rubick_telekinesis", "rubick_telekinesis_land"}
 
 
 -- Rebalance the distribution of gold and XP to make for a better 10v10 game
@@ -352,7 +352,7 @@ function PowerMultiplier:ExecuteOrderFilter( filterTable )
       local fountain = Entities:FindByClassname( nil, "ent_dota_fountain" )
       while fountain do
         
-        if fountain:IsPositionInRange(order_hero:GetOrigin(), 1450) or fountain:IsPositionInRange(point, 1450+radius) or fountain:IsPositionInRange(target_hero:GetOrigin(), 1450+radius) then
+        if fountain:IsPositionInRange(order_hero:GetOrigin(), 1500) or fountain:IsPositionInRange(point, 1500+radius) or fountain:IsPositionInRange(target_hero:GetOrigin(), 1500+radius) then
           Notifications:Top(playerID, {text="You're not allowed to use that near to fontain", duration=4, style={color="red"}, continue=false})
           return false
         end
@@ -958,40 +958,54 @@ end
 
 function PowerMultiplier:MultiplyTowers()
 
-  -- async call to buff fountain
-  Timers:CreateTimer(0, function()
 
-      -- wait until used skills is precached
-      if SkillHandler:findPrecachedSkill('ursa_fury_swipes') == nil then return 1 end
-      
-      Log("Improving fontain!")
+  PrecacheItemByNameAsync("ability_fountain_protection", function()
 
-      -- loop over all fountains
-      local fountain = Entities:FindByClassname( nil, "ent_dota_fountain" )
-      while fountain do
+    -- async call to buff fountain
+    Timers:CreateTimer(0, function()
 
-          -- improve base damage
-          --fountain:SetBaseDamageMin((fountain:GetBaseDamageMin() * factor) * 2)
-          --fountain:SetBaseDamageMax((fountain:GetBaseDamageMax() * factor) * 2)
+        -- wait until used skills is precached
+        if SkillHandler:findPrecachedSkill('ursa_fury_swipes') == nil then return 1 end
+        
+        Log("Improving fontain!")
 
-          -- add mkb item
-          local item = CreateItem('item_monkey_king_bar', fountain, fountain)
-          if item then
-              fountain:AddItem(item)
-          end
+        -- loop over all fountains
+        local fountain = Entities:FindByClassname( nil, "ent_dota_fountain" )
+        while fountain do
 
-          -- add fury swipes skill async
+            -- improve base damage
+            --fountain:SetBaseDamageMin((fountain:GetBaseDamageMin() * factor) * 2)
+            --fountain:SetBaseDamageMax((fountain:GetBaseDamageMax() * factor) * 2)
 
-          fountain:AddAbility('ursa_fury_swipes')       
-          local ab = fountain:FindAbilityByName('ursa_fury_swipes')
-          if ab then
-              ab:SetLevel(1)
-          end
+            -- add mkb item
+            local item = CreateItem('item_monkey_king_bar', fountain, fountain)
+            if item then
+                fountain:AddItem(item)
+            end
 
 
-          -- find next fountain
-          fountain = Entities:FindByClassname( fountain, "ent_dota_fountain" )
-      end
+            -- add protection skill async
+            fountain:AddAbility('ability_fountain_protection')       
+            local ab = fountain:FindAbilityByName('ability_fountain_protection')
+            if ab then
+                ab:SetLevel(1)
+            end
+
+
+
+            -- add fury swipes skill async
+            fountain:AddAbility('ursa_fury_swipes')       
+            ab = fountain:FindAbilityByName('ursa_fury_swipes')
+            if ab then
+                ab:SetLevel(1)
+            end
+
+
+            -- find next fountain
+            fountain = Entities:FindByClassname( fountain, "ent_dota_fountain" )
+        end
+    end)
+
   end)
   
   
