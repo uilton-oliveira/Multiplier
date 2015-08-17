@@ -99,7 +99,7 @@ more_specific_max_value = {'item_cloak':{'tooltip_resist': '40'}, 'item_hood_of_
 							 'troll_warlord_berserkers_rage': {'base_attack_time': '1.3'},
 							 'sven_great_cleave': {'great_cleave_damage': '50 55 60 65'}, 'magnataur_empower': {'cleave_damage_pct': '30 40 50 60'},
 							 'bristleback_viscous_nasal_goo': {'base_move_slow': '30', 'move_slow_per_stack': '12 15 18 21', 'stack_limit': '6'},
-							 'bristleback_bristleback': {'back_damage_reduction': '30 40 50 60'}, 'bristleback_warpath': {'stack_duration': '20.0', 'damage_per_stack': '200 250 300'},
+							 'bristleback_bristleback': {'back_damage_reduction': '20 30 40 50'}, 'bristleback_warpath': {'stack_duration': '20.0', 'damage_per_stack': '200 250 300'},
 							 'luna_moon_glaive': {'damage_reduction_percent': '15', 'bounces': '10 20 30 40'},
 							 'luna_lunar_blessing': {'bonus_night_vision': '3000'},
 							 'item_maelstrom': {'chain_strikes': '25', 'chain_delay': '0.05'},
@@ -110,7 +110,8 @@ more_specific_max_value = {'item_cloak':{'tooltip_resist': '40'}, 'item_hood_of_
 							 'life_stealer_feast': {'hp_leech_percent': '9 11 13 15'}, 'spirit_breaker_greater_bash': {'50 100 150 200'},
 							 'dark_seer_surge': {'duration': '8.0 9.0 10.0 11.0'}, 'earthshaker_aftershock': {'aftershock_range': '1200'},
 							 'death_prophet_witchcraft': {'exorcism_1_extra_spirits': '10 11 12 13', 'exorcism_2_extra_spirits': '10 11 12 13', 'exorcism_3_extra_spirits': '10 11 12 13'},
-							 'death_prophet_exorcism': {'spirits': '15 25 35'}, 'sniper_shrapnel': {'slow_movement_speed': '-40 -50 -60 -70'}}
+							 'death_prophet_exorcism': {'spirits': '15 25 35'}, 'sniper_shrapnel': {'slow_movement_speed': '-40 -50 -60 -70'},
+							 'bristleback_quill_spray': {'radius': '800', 'AbilityCastRange': '800'}}
 
 multiply_specific_by_fixed_factor = {
 	'faceless_void_time_walk': {'AbilityCastRange': 4, 'tooltip_range': 4},
@@ -135,7 +136,14 @@ multiply_specific_by_fixed_factor = {
 	'vengefulspirit_nether_swap': {'AbilityCastRange': 4, 'tooltip_range': 4},
 	'pudge_meat_hook': {'AbilityCastRange': 4, 'hook_distance': 4},
 	'item_hand_of_midas': {'AbilityCastRange': 20, 'transmute_cast_range_tooltip': 20},
-	'tinker_laser': {'AbilityDamage': 10}
+	'tinker_laser': {'AbilityDamage': 10},
+	'zuus_thundergods_wrath': {'damage': 10, 'damage_scepter': 10},
+	'bristleback_bristleback': {'quill_release_threshold': 10},
+	'faceless_void_chronosphere': {'radius': 10},
+	'enigma_black_hole': {'pull_radius': 10},
+	'sniper_assassinate': {'AbilityCastRange': 10, 'tooltip_range': 10},
+	'rubick_telekinesis': {'AbilityCastRange': 10, 'cast_range_tooltip': 10, 'max_land_distance': 10},
+	'rubick_spell_steal': {'AbilityCastRange': 10, 'cast_range_scepter': 10}
 }
 
 multiply_all_by_fixed_factor = {
@@ -222,7 +230,7 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
 									'windrunner_powershot': {'damage_reduction', 'speed_reduction', 'tree_width', 'vision_duration'},
 									'windrunner_shackleshot': {'shackle_count'}, 'viper_viper_strike': {'duration'},
 									'spectre_spectral_dagger': {'dagger_path_duration', 'hero_path_duration', 'buff_persistence', 'dagger_grace_period'},
-									'tinker_march_of_the_machines': { 'duration', 'speed', 'machines_per_sec'},
+									'tinker_march_of_the_machines': { 'duration', 'speed', 'machines_per_sec', 'collision_radius', 'splash_radius'},
 									'lone_druid_spirit_bear_entangle': {'hero_duration', 'creep_duration'},
 									'lone_druid_true_form': {'speed_loss'}, 'lone_druid_spirit_bear': {'bear_regen_tooltip', 'backlash_damage', 'bear_hp'},
 									'shadow_shaman_shackles': {'channel_time'}, 'antimage_mana_break': {'damage_per_burn'},
@@ -255,7 +263,7 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
 									'earth_spirit_geomagnetic_grip': { 'miss_rate', 'miss_duration', 'pull_units_per_second_heroes', 'pull_units_per_second'},
 									'earth_spirit_rolling_boulder': {'delay', 'slow_duration'},
 									'bristleback_viscous_nasal_goo': {'goo_duration', 'goo_duration_creep', 'armor_per_stack'},
-									'bristleback_quill_spray': {'quill_stack_duration'}, 'bristleback_bristleback': {'side_angle', 'back_angle', 'side_damage_reduction', 'quill_release_threshold'},
+									'bristleback_quill_spray': {'quill_stack_duration'}, 'bristleback_bristleback': {'side_angle', 'back_angle', 'side_damage_reduction'},
 									'terrorblade_metamorphosis': {'speed_loss'}, 'treant_natures_guise': {'grace_time'},
 									'undying_decay': { 'decay_duration'},
 									'undying_tombstone': {'duration',  'zombie_interval'}, 'undying_tombstone_zombie_aura': { 'zombie_interval'},
@@ -284,7 +292,7 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
 									'necrolyte_sadist': {'regen_duration'}, 'huskar_berserkers_blood': {'resistance_per_stack'},
 									'huskar_life_break': {'health_cost_percent', 'health_damage', 'health_damage_scepter', 'tooltip_health_cost_percent', 'tooltip_health_damage', 'tooltip_health_damage_scepter'},
 									'elder_titan_ancestral_spirit': {'spirit_duration', 'move_pct_cap'},
-									'elder_titan_earth_splitter': {'crack_time', 'vision_interval', 'vision_duration', 'vision_step', 'total_steps', 'slow_duration_scepter'},
+									'elder_titan_earth_splitter': {'crack_time', 'vision_interval', 'vision_duration', 'vision_step', 'total_steps', 'slow_duration_scepter' 'damage_pct'},
 									'witch_doctor_paralyzing_cask': {'bounce_range', 'bounce_delay'},
 									'witch_doctor_voodoo_restoration': {'mana_per_second', 'heal_interval'}, 'witch_doctor_maledict': {'bonus_damage_threshold', 'duration_tooltip', 'bonus_damage', 'ticks'},
 									'pugna_nether_ward': { 'attacks_to_destroy_tooltip'}, 'shadow_demon_disruption': {'disruption_duration'},
@@ -400,36 +408,40 @@ dont_parse_more_specific = {'luna_eclipse': {'duration_tooltip', 'radius'}, 'tro
 
 ignore_partial_names = {'cooldown'}
 
-fixed_value = {'item_bloodstone': {'on_death_removal':'0.67', 'respawn_time_reduction': '4.0'},
-							 'sniper_assassinate': {'AbilityUnitTargetFlags': 'DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS'},
-							 'spectre_dispersion': {'damage_reflection_pct':'14 18 22 26'}, 'gyrocopter_homing_missile': {'stun_duration':'2.0 2.5 3.0 3.5'}, 'item_lesser_crit': {'crit_chance': '30'},
-							 'item_greater_crit': {'crit_chance': '45'}, 'juggernaut_blade_dance': {'blade_dance_crit_chance':'30 40 50 60'}, 'skeleton_king_mortal_strike': {'crit_chance':'30'},
-							 'bounty_hunter_jinada': {'8.0 7.0 5.0 3.0'}, 'phantom_assassin_coup_de_grace': {'crit_chance':'15'}, 'lycan_shapeshift': {'crit_chance': '30 40 50'}, 'lycan_summon_wolves_critical_strike': {'crit_chance': '45'},
-							 'brewmaster_drunken_brawler': {'crit_chance':'20 25 30 35'}, 'chaos_knight_chaos_strike': {'crit_chance': '10 14 18 20'},
-							 'leshrac_diabolic_edict': {'AbilityUnitTargetType': 'DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC', 'tower_bonus': '-100'},
-							 'jakiro_liquid_fire': {'AbilityUnitTargetType': 'DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC' },
-							 'ancient_apparition_ice_vortex': {'AbilityCooldown': '25.0 20.0 15.0 10.0'},
-							 'invoker_ghost_walk': {'self_slow': '-5 -0 10 20 40 60 80'}, 'invoker_cold_snap': {'freeze_duration': '0.58'}, 'invoker_sun_strike': {'delay': '0.6'},
-							 'templar_assassin_psi_blades': {'attack_spill_range': '900 1030 1270 1550'}, 'phoenix_sun_ray': {'hp_cost_perc_per_second': '10', 'hp_perc_dmg': '2 4 6 8'},
-							 'keeper_of_the_light_recall': {'teleport_delay': '4.0 2.5 1.5'}, 'lone_druid_spirit_bear_demolish': {'bonus_building_damage': '-90'},
-							 'rubick_spell_steal': {'duration': '300.0 400.0 500.0'}, 'enigma_demonic_conversion': {'split_attack_count': '5 4 3 2', 'spawn_count': '3 4 5 6'},
-							 'techies_land_mines': {'SpellImmunityType': 'SPELL_IMMUNITY_ENEMIES_NO'},
-							 'ogre_magi_multicast': {'multicast_2_times': '0.6 0.75 0.9', 'multicast_3_times': '0 0.40 0.50', 'multicast_4_times': '0 0 0.25', 'multicast_2_times_tooltip': '60 75 90', 'multicast_3_times_tooltip': '0 40 50', 'multicast_4_times_tooltip': '0 0 25'},
-							 'skywrath_mage_mystic_flare': {'scepter_cooldown': '50 30 15'}, 'faceless_void_time_lock': {'chance_pct': '14 18 22 26'}, 'faceless_void_chronosphere': {'duration': '5.0 5.5 6.0', 'duration_scepter': '6.0 6.5 7.5'},
-							 'faceless_void_backtrack': {'dodge_chance_pct': '15 20 25 30'}, 'oracle_false_promise': {'duration': '12 14 16'}, 'terrorblade_sunder': {'hit_point_minimum_pct': '10'},
-							 'furion_teleportation': {'AbilityCastPoint': '1.5', 'AbilityCooldown': '30 20 10 5'}, 'furion_sprout': {'duration': '6 7 8 9'}, 'treant_natures_guise': {'fade_time': '1.0'},
-							 'abaddon_borrowed_time': {'duration': '5.0 6.0 7.0', 'duration_scepter': '6.5 7.5 8.5'},
-							 'morphling_adaptive_strike': {'damage_min': '0.50 0.50 0.50 0.50', 'damage_max': '1.0 2.0 3.0 4.0'}, 'courier_burst': {'AbilityCooldown': '15'},
-							 'weaver_geminate_attack': {'AbilityCooldown': '3.0 2.0 1.0 0.5'}, 'weaver_shukuchi': {'duration': '4.0 4.4 4.8 5.2'}, 'weaver_time_lapse': {'AbilityCooldown': '30 25 20', 'cooldown_scepter': '10'},
-							 'omniknight_purification': {'AbilityUnitDamageType': 'DAMAGE_TYPE_MAGICAL'},
-							 'item_travel_boots': {'AbilityCooldown': '20'}, 'item_travel_boots_2': {'AbilityCooldown': '20'},
-							 'item_sheepstick': {'sheep_duration': '5.0', 'sheep_movement_speed': '100'}, 'medusa_split_shot': {'damage_modifier': '-20 -16 -13 -10', 'damage_modifier_tooltip': '80 84 87 90'},
-							 'item_force_staff': {'AbilityCooldown': '10.0'}, 'lone_druid_true_form': {'base_attack_time': '1.4 1.4 1.4'}, 'terrorblade_metamorphosis': {'base_attack_time': '1.5'},
-							 'alchemist_chemical_rage': {'base_attack_time': '1.4 1.2 1.0'}, 'furion_wrath_of_nature': {'jump_delay': '0.01'}, 'item_monkey_king_bar': {'bash_stun': '0.0'},
-							 'item_manta': {'images_do_damage_percent_melee': '-50', 'tooltip_damage_outgoing_melee': '50', 'images_take_damage_percent_melee': '150', 'tooltip_damage_incoming_melee_total_pct': '250',
-											'images_do_damage_percent_ranged': '-60', 'tooltip_damage_outgoing_ranged': '40', 'images_take_damage_percent_ranged': '200', 'tooltip_damage_incoming_ranged_total_pct': '300'},
-							 'item_solar_crest': {'AbilityCooldown': '14'}, 'mirana_invis': {'fade_delay': '1.5 1.0 0.5'}, 'puck_phase_shift': {'duration': '2.0 3.5 5.0 6.5', 'AbilityChannelTime': '2.0 3.5 5.0 6.5'}, 'shadow_shaman_voodoo': {'duration': '2.0 2.75 3.5 4.25'},
-							 'sandking_sand_storm': '0.8'}
+fixed_value = {
+				'item_bloodstone': {'on_death_removal':'0.67', 'respawn_time_reduction': '4.0'},
+				 'sniper_assassinate': {'AbilityUnitTargetFlags': 'DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS'},
+				 'spectre_dispersion': {'damage_reflection_pct':'14 18 22 26'}, 'gyrocopter_homing_missile': {'stun_duration':'2.0 2.5 3.0 3.5'}, 'item_lesser_crit': {'crit_chance': '30'},
+				 'item_greater_crit': {'crit_chance': '45'}, 'juggernaut_blade_dance': {'blade_dance_crit_chance':'30 40 50 60'}, 'skeleton_king_mortal_strike': {'crit_chance':'30'},
+				 'bounty_hunter_jinada': {'8.0 7.0 5.0 3.0'}, 'phantom_assassin_coup_de_grace': {'crit_chance':'15'}, 'lycan_shapeshift': {'crit_chance': '30 40 50'}, 'lycan_summon_wolves_critical_strike': {'crit_chance': '45'},
+				 'brewmaster_drunken_brawler': {'crit_chance':'20 25 30 35'}, 'chaos_knight_chaos_strike': {'crit_chance': '10 14 18 20'},
+				 'leshrac_diabolic_edict': {'AbilityUnitTargetType': 'DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC', 'tower_bonus': '-100'},
+				 'jakiro_liquid_fire': {'AbilityUnitTargetType': 'DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC' },
+				 'ancient_apparition_ice_vortex': {'AbilityCooldown': '25.0 20.0 15.0 10.0'},
+				 'invoker_ghost_walk': {'self_slow': '-5 -0 10 20 40 60 80'}, 'invoker_cold_snap': {'freeze_duration': '0.58'}, 'invoker_sun_strike': {'delay': '0.6'},
+				 'templar_assassin_psi_blades': {'attack_spill_range': '900 1030 1270 1550'}, 'phoenix_sun_ray': {'hp_cost_perc_per_second': '10', 'hp_perc_dmg': '2 4 6 8'},
+				 'keeper_of_the_light_recall': {'teleport_delay': '4.0 2.5 1.5'}, 'lone_druid_spirit_bear_demolish': {'bonus_building_damage': '-90'},
+				 'rubick_spell_steal': {'duration': '300.0 400.0 500.0'}, 'enigma_demonic_conversion': {'split_attack_count': '5 4 3 2', 'spawn_count': '3 4 5 6'},
+				 'techies_land_mines': {'SpellImmunityType': 'SPELL_IMMUNITY_ENEMIES_NO'},
+				 'ogre_magi_multicast': {'multicast_2_times': '0.6 0.75 0.9', 'multicast_3_times': '0 0.40 0.50', 'multicast_4_times': '0 0 0.25', 'multicast_2_times_tooltip': '60 75 90', 'multicast_3_times_tooltip': '0 40 50', 'multicast_4_times_tooltip': '0 0 25'},
+				 'skywrath_mage_mystic_flare': {'scepter_cooldown': '50 30 15'}, 'faceless_void_time_lock': {'chance_pct': '14 18 22 26'}, 'faceless_void_chronosphere': {'duration': '5.0 5.5 6.0', 'duration_scepter': '6.0 6.5 7.5'},
+				 'faceless_void_backtrack': {'dodge_chance_pct': '15 20 25 30'}, 'oracle_false_promise': {'duration': '12 14 16'}, 'terrorblade_sunder': {'hit_point_minimum_pct': '10'},
+				 'furion_teleportation': {'AbilityCastPoint': '1.5', 'AbilityCooldown': '30 20 10 5'}, 'furion_sprout': {'duration': '6 7 8 9'}, 'treant_natures_guise': {'fade_time': '1.0'},
+				 'abaddon_borrowed_time': {'duration': '5.0 6.0 7.0', 'duration_scepter': '6.5 7.5 8.5'},
+				 'morphling_adaptive_strike': {'damage_min': '0.50 0.50 0.50 0.50', 'damage_max': '1.0 2.0 3.0 4.0'}, 'courier_burst': {'AbilityCooldown': '15'},
+				 'weaver_geminate_attack': {'AbilityCooldown': '3.0 2.0 1.0 0.5'}, 'weaver_shukuchi': {'duration': '4.0 4.4 4.8 5.2'}, 'weaver_time_lapse': {'AbilityCooldown': '30 25 20', 'cooldown_scepter': '10'},
+				 'omniknight_purification': {'AbilityUnitDamageType': 'DAMAGE_TYPE_MAGICAL'},
+				 'item_travel_boots': {'AbilityCooldown': '20'}, 'item_travel_boots_2': {'AbilityCooldown': '20'},
+				 'item_sheepstick': {'sheep_duration': '5.0', 'sheep_movement_speed': '100'}, 'medusa_split_shot': {'damage_modifier': '-20 -16 -13 -10', 'damage_modifier_tooltip': '80 84 87 90'},
+				 'item_force_staff': {'AbilityCooldown': '10.0'}, 'lone_druid_true_form': {'base_attack_time': '1.4 1.4 1.4'}, 'terrorblade_metamorphosis': {'base_attack_time': '1.5'},
+				 'alchemist_chemical_rage': {'base_attack_time': '1.4 1.2 1.0'}, 'furion_wrath_of_nature': {'jump_delay': '0.01'}, 'item_monkey_king_bar': {'bash_stun': '0.0'},
+				 'item_manta': {'images_do_damage_percent_melee': '-50', 'tooltip_damage_outgoing_melee': '50', 'images_take_damage_percent_melee': '150', 'tooltip_damage_incoming_melee_total_pct': '250',
+								'images_do_damage_percent_ranged': '-60', 'tooltip_damage_outgoing_ranged': '40', 'images_take_damage_percent_ranged': '200', 'tooltip_damage_incoming_ranged_total_pct': '300'},
+				 'item_solar_crest': {'AbilityCooldown': '14'}, 'mirana_invis': {'fade_delay': '1.5 1.0 0.5'}, 'puck_phase_shift': {'duration': '2.0 3.5 5.0 6.5', 'AbilityChannelTime': '2.0 3.5 5.0 6.5'}, 'shadow_shaman_voodoo': {'duration': '2.0 2.75 3.5 4.25'},
+				 'sandking_sand_storm': {'sand_storm_invis_delay': '0.8'}, 'zuus_thundergods_wrath': {'AbilityCooldown': '45'},
+				 'item_refresher': {'AbilityCooldown': '95'}
+
+			}
 
 
 insert_custom_normal = {}
@@ -536,7 +548,7 @@ def divide(values, by, separator, forceMax):
 			
 	return ' '.join(tmplist)
 
-def check_special_condition(name, key_type, key, values, by, separator):
+def check_special_condition(name, key_type, key, values, by, separator, maxValue):
 	if key_type == "Normal" and key == "Modifiers":
 		return values;
 	
@@ -550,7 +562,7 @@ def check_special_condition(name, key_type, key, values, by, separator):
 
 	if key in multiply_all_by_fixed_factor:
 		val = by if multiply_all_by_fixed_factor[key] > by else multiply_all_by_fixed_factor[key]
-		return multiply(values, val, separator, False)
+		return multiply(values, val, separator, maxValue)
 
 	
 	if key_type == "Normal":
@@ -567,7 +579,7 @@ def check_special_condition(name, key_type, key, values, by, separator):
 
 	for partial in multiply_all_partial_by_fixed_factor:
 		if partial in key:
-			return multiply(values, multiply_all_partial_by_fixed_factor[partial], separator, False)
+			return multiply(values, multiply_all_partial_by_fixed_factor[partial], separator, maxValue)
 	
 	# multiply only numbers
 	testinstance = str_to_type(values.split(" ")[0])
@@ -601,7 +613,7 @@ def divide_or_multiply(name, key_type, key, values, by, separator):
 		maxValue = more_specific_max_value[name][key]
 
 
-	val = check_special_condition(name, key_type, key, values, by, separator)
+	val = check_special_condition(name, key_type, key, values, by, separator, maxValue)
 	if val != False:
 			return val;
 

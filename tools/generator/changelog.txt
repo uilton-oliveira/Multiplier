@@ -1,6 +1,8 @@
-* No damage will be taken inside fountain anymore, its to prevent heroes like zeus from farming leavers.
-* Removed many damage skills from being not be castable inside/near fountain
-* All Cast Ranges will be multiplied to 3x instead of 2x (blinks is still 4x)
+* Zeus (Balance)
+- Ultimate damage will now be multiplied 10, but the cooldown was divided by 2 (45s)
 
-* Tinker (Nerf)
-- Laser -> Damage will be multiplied up to 10x (its pure damage)
+* Refresher Orb
+- Cooldown reduced to 95s
+
+* Bristleback
+- Quill Spray -> Radius limited up to 800
