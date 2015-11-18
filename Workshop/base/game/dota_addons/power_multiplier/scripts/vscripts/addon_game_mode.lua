@@ -82,7 +82,21 @@ local creatorPlayerID = 0
 local creatorName = ''
 local mapName = ''
 
-local blockedInFontain = Set{"vengefulspirit_nether_swap", "pudge_meat_hook", "nyx_assassin_burrow", "techies_minefield_sign", "storm_spirit_electric_vortex", "axe_berserkers_call", "enigma_black_hole", "chaos_knight_reality_rift", "tiny_toss", "magnataur_skewer", "rubick_telekinesis", "rubick_telekinesis_land"}
+local blockedInFontain = Set{"vengefulspirit_nether_swap", "pudge_meat_hook", "nyx_assassin_burrow", "techies_minefield_sign", "storm_spirit_electric_vortex", "axe_berserkers_call", "enigma_black_hole", "chaos_knight_reality_rift", "tiny_toss", "magnataur_skewer", "rubick_telekinesis", "rubick_telekinesis_land", "keeper_of_the_light_blinding_light"}
+local buffSummons = Set{
+      "npc_dota_lycan_wolf", "npc_dota_lone_druid_bear", "npc_dota_furion_treant", "npc_dota_beastmaster_boar_1", "npc_dota_beastmaster_boar_2", "npc_dota_beastmaster_boar_3", "npc_dota_beastmaster_boar_4",
+      "npc_dota_beastmaster_hawk_1", "npc_dota_beastmaster_hawk_2", "npc_dota_beastmaster_hawk_3", "npc_dota_beastmaster_hawk_4", "npc_dota_warlock_golem_1", "npc_dota_warlock_golem_2", "npc_dota_warlock_golem_3",
+      "npc_dota_warlock_golem_scepter_1", "npc_dota_warlock_golem_scepter_2", "npc_dota_warlock_golem_scepter_3", "npc_dota_broodmother_spiderling", "npc_dota_broodmother_spiderite", "npc_dota_necronomicon_warrior_1",
+      "npc_dota_necronomicon_warrior_2", "npc_dota_necronomicon_warrior_3", "npc_dota_necronomicon_archer_1", "npc_dota_necronomicon_archer_2", "npc_dota_necronomicon_archer_3", "npc_dota_venomancer_plague_ward_1",
+      "npc_dota_venomancer_plague_ward_2", "npc_dota_venomancer_plague_ward_3", "npc_dota_venomancer_plague_ward_4", "npc_dota_scout_hawk", "npc_dota_brewmaster_earth_1", "npc_dota_brewmaster_earth_2",
+      "npc_dota_brewmaster_earth_3", "npc_dota_brewmaster_storm_1", "npc_dota_brewmaster_storm_2", "npc_dota_brewmaster_storm_3", "npc_dota_brewmaster_fire_1", "npc_dota_brewmaster_fire_2", "npc_dota_brewmaster_fire_3",
+      "npc_dota_lone_druid_bear1", "npc_dota_lone_druid_bear2", "npc_dota_lone_druid_bear3", "npc_dota_lone_druid_bear4", "npc_dota_unit_tombstone1", "npc_dota_unit_tombstone2", "npc_dota_unit_tombstone3", "npc_dota_unit_tombstone4"
+    }
+
+
+local buffSummonsBy2 = Set{
+      "npc_dota_unit_undying_zombie", "npc_dota_unit_undying_zombie_torso"
+    }
 
 
 -- Rebalance the distribution of gold and XP to make for a better 10v10 game
@@ -385,8 +399,8 @@ function PowerMultiplier:BountyRunePickupFilter( filterTable )
   local gold = filterTable['gold_bounty'] * factor
   local xp = filterTable['xp_bounty'] * factor
 
-  if xp > 700 then xp = 700 end
-  if gold > 1000 then gold = 1000 end
+  if xp > 500 then xp = 500 end
+  if gold > 500 then gold = 500 end
 
   filterTable['gold_bounty'] = gold
   filterTable['xp_bounty'] = xp
@@ -751,15 +765,8 @@ function PowerMultiplier:OnNpcSpawned(keys)
 
     --Log('Spawned unit: ' .. spawnedUnit:GetUnitName())
     
-    if string.find(spawnedUnit:GetUnitName(), 'npc_dota_lycan_wolf') or string.find(spawnedUnit:GetUnitName(), 'npc_dota_lone_druid_bear')
-      or string.find(spawnedUnit:GetUnitName(), 'npc_dota_furion_treant') or string.find(spawnedUnit:GetUnitName(), 'npc_dota_beastmaster_boar_1')
-      or string.find(spawnedUnit:GetUnitName(), 'npc_dota_beastmaster_boar_2') or string.find(spawnedUnit:GetUnitName(), 'npc_dota_beastmaster_boar_3')
-      or string.find(spawnedUnit:GetUnitName(), 'npc_dota_beastmaster_boar_4') or string.find(spawnedUnit:GetUnitName(), 'npc_dota_beastmaster_hawk_1')
-      or string.find(spawnedUnit:GetUnitName(), 'npc_dota_beastmaster_hawk_2') or string.find(spawnedUnit:GetUnitName(), 'npc_dota_beastmaster_hawk_3')
-      or string.find(spawnedUnit:GetUnitName(), 'npc_dota_beastmaster_hawk_4') or string.find(spawnedUnit:GetUnitName(), 'npc_dota_warlock_golem_1')
-      or string.find(spawnedUnit:GetUnitName(), 'npc_dota_warlock_golem_2') or string.find(spawnedUnit:GetUnitName(), 'npc_dota_warlock_golem_3')
-      or string.find(spawnedUnit:GetUnitName(), 'npc_dota_warlock_golem_scepter_1') or string.find(spawnedUnit:GetUnitName(), 'npc_dota_warlock_golem_scepter_2')
-      or string.find(spawnedUnit:GetUnitName(), 'npc_dota_warlock_golem_scepter_3') then
+    -- buff these summons
+    if buffSummons[spawnedUnit:GetUnitName()] then
 
       if handledSummons[spawnedUnit] ~= nil then return end
       handledSummons[spawnedUnit] = true
@@ -773,6 +780,25 @@ function PowerMultiplier:OnNpcSpawned(keys)
       --spawnedUnit:SetPhysicalArmorBaseValue((spawnedUnit:GetPhysicalArmorBaseValue() * factor))
       --spawnedUnit:CalculateStatBonus()
     end
+
+    -- buff these summons
+    if buffSummonsBy2[spawnedUnit:GetUnitName()] then
+
+      if handledSummons[spawnedUnit] ~= nil then return end
+      handledSummons[spawnedUnit] = true
+
+      spawnedUnit:SetBaseDamageMin((spawnedUnit:GetBaseDamageMin() * 2))
+      --Log("Damage Max: " .. spawnedUnit:GetBaseDamageMax())
+      spawnedUnit:SetBaseDamageMax((spawnedUnit:GetBaseDamageMax() * 2))
+      spawnedUnit:SetBaseMaxHealth(spawnedUnit:GetBaseMaxHealth() * 2)
+      spawnedUnit:SetMaxHealth(spawnedUnit:GetMaxHealth() * 2)
+      spawnedUnit:SetHealth(spawnedUnit:GetHealth() * 2)
+      --spawnedUnit:SetPhysicalArmorBaseValue((spawnedUnit:GetPhysicalArmorBaseValue() * factor))
+      --spawnedUnit:CalculateStatBonus()
+    end
+
+
+    
 
   
   
@@ -1158,8 +1184,8 @@ function PowerMultiplier:sayGameModeMessage()
   local bufUi = '<font color="'..COLOR_GREEN2..'">Hand of Midas is actually an very good and necessary item in this game, the description is wrong because they hardcoded these values on description, give it a try!</font>'
   Say(nil, bufUi, false)
 
-  local bufUi = '<font color="'..COLOR_ORANGE2..'">Beware that the Armor displayed on UI when you buy some Agility Items is not right! Its VISUAL Bug, Valve need to fix that! Every 126 Agility you will gain actually 1 armor</font>'
-  Say(nil, bufUi, false)
+  -- local bufUi = '<font color="'..COLOR_ORANGE2..'">Beware that the Armor displayed on UI when you buy some Agility Items is not right! Its VISUAL Bug, Valve need to fix that! Every 126 Agility you will gain actually 1 armor</font>'
+  -- Say(nil, bufUi, false)
 
 
   if isCreatorInGame then

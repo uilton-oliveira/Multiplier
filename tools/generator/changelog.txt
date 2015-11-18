@@ -1,8 +1,4 @@
-* Zeus (Balance)
-- Ultimate damage will now be multiplied 10, but the cooldown was divided by 2 (45s)
+* Removed warning about Agility to Armor, valve fixed it!
 
-* Refresher Orb
-- Cooldown reduced to 95s
-
-* Bristleback
-- Quill Spray -> Radius limited up to 800
+* Pudge (Nerf)
+- Flesh Heap -> Strength gain per kill will be multiplied by 5 instead of raw x20, it will make pudge more str item dependent.
