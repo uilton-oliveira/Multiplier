@@ -1,3 +1,7 @@
+[![GitHub issues](https://img.shields.io/github/issues/DarkSupremo/Multiplier.svg?maxAge=60&style=flat-square)](https://github.com/DarkSupremo/Multiplier/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/DarkSupremo/Multiplier.svg?maxAge=60&style=flat-square)](https://github.com/DarkSupremo/Multiplier/pulls)
+[![Github Releases](https://img.shields.io/github/downloads/DarkSupremo/Multiplier/total.svg?maxAge=60&style=flat-square)](https://github.com/DarkSupremo/Multiplier/releases/latest)
+
 Dota 2 Power Multiplier ( https://www.uiltonsites.com.br )
 ==========
 
